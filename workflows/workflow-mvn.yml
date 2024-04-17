@@ -1,0 +1,12 @@
+name: Build Project
+on: workflow_call
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: openjdk:17.0.2-jdk
+    steps:
+      - name: Preparação e validação do projeto
+        uses: ./prepare
+      - name: Criação de pacotes maven e/ou docker
+        run: echo "workflow chamado"

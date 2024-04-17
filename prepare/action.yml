@@ -4,9 +4,11 @@ runs:
   using: 'composite'
   steps:
     - name: Preparação e validação do projeto
-      run: sleep 50
+      run: | 
+        sleep 50
+        echo "Primeiro step da action prepare"
       shell: bash
     - name: Preparar 2
-      run: echo "Isso é em outra branch"
+      run: echo "segundo step"
       shell: bash
 
