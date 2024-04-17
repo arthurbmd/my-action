@@ -5,3 +5,4 @@ runs:
   steps:
     - name: Preparação e validação do projeto
       run: sleep 50
+      shell: bash
