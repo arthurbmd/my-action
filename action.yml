@@ -1,0 +1,7 @@
+name: Build Project
+description: "This is a action test"
+runs:
+  using: 'composite'
+  steps:
+    - name: Preparação e validação do projeto
+      run: sleep 50
