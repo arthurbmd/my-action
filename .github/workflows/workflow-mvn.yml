@@ -6,6 +6,8 @@ jobs:
     container:
       image: openjdk:17.0.2-jdk
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
       - name: Preparação e validação do projeto
         uses: ./.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
