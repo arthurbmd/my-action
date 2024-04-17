@@ -6,3 +6,7 @@ runs:
     - name: Preparação e validação do projeto
       run: sleep 50
       shell: bash
+    - name: Preparar 2
+      run: echo "Isso é em outra branch"
+      shell: bash
+
