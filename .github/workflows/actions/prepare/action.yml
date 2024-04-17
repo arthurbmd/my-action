@@ -3,6 +3,8 @@ description: "This is a action test"
 runs:
   using: 'composite'
   steps:
+    - name: checkout
+      uses: actions/checkout@v4
     - name: Preparação e validação do projeto
       run: | 
         sleep 50
