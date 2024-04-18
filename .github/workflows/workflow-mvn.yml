@@ -1,9 +1,13 @@
 name: Build Project
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      BRANCH:
+        required: true
+        type: string
+        description: "Name of branch of the actions repo"    
 jobs:
   build:
-    env:
-      refere: ${{ github.job_workflow_sha }}
     runs-on: ubuntu-latest
     container:
       image: openjdk:17.0.2-jdk
@@ -14,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: arthurbmd/my-action
-          ref: ${{ env.refere }}
+          ref: ${{ inputs.BRANCH }}
           path: custom-actions
     
       - name: Preparação e validação do projeto
