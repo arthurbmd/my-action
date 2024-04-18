@@ -6,14 +6,7 @@ jobs:
     container:
       image: openjdk:17.0.2-jdk
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-      - name: checkout actions
-        uses: actions/checkout@v4
-        with:
-          repository: 'owner/repo'
-          path: '.github/actions'
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
       - name: Preparação e validação do projeto
         uses: ./.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
