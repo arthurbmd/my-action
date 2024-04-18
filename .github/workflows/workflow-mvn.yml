@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout Actions from Another Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'arthurbmd/my-actions'
-          path: '.github/actions'
+          path: 'arthurbmd/my-actions'
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Preparação e validação do projeto
-        uses: ./.github/actions/prepare
+        uses: ./arthurbmd/my-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
         run: echo "workflow chamado"
