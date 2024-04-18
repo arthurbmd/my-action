@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: openjdk:17.0.2-jdk
+      image: eclipse-temurin:17-jdk
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
