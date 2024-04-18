@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Checkout Actions from Another Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: arthurbmd/my-action
           ref: ${{ inputs.BRANCH }}
@@ -23,8 +23,7 @@ jobs:
       - name: ls
         run: |
           pwd
-          cd /__w/quarkus-social/quarkus-social/custom-actions/
-          ls
+          ls /__w/quarkus-social/quarkus-social/custom-actions/
       - name: Preparação e validação do projeto
         uses: ./custom-actions/actions/prepare
       - name: Criação de pacotes maven e/ou docker
