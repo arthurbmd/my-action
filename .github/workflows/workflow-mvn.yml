@@ -6,7 +6,13 @@ jobs:
     container:
       image: openjdk:17.0.2-jdk
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Checkout Actions from Another Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'arthurbmd/my-actions'
+          path: '.github/actions'
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Preparação e validação do projeto
         uses: ./.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
