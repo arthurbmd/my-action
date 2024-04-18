@@ -1,5 +1,11 @@
 name: Build Project
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      ACCESS:
+        required: true
+        description: "Token to access actions"
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,7 +18,7 @@ jobs:
         with:
           repository: 'arthurbmd/my-actions'
           path: 'arthurbmd/my-actions'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ inputs.ACCESS }}
       - name: Preparação e validação do projeto
         uses: ./arthurbmd/my-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
