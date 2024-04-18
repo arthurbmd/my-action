@@ -25,6 +25,6 @@ jobs:
           pwd
           ls /__w/quarkus-social/quarkus-social/custom-actions/
       - name: Preparação e validação do projeto
-        uses: ./custom-actions/actions/prepare
+        uses: ./custom-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
         run: echo "workflow chamado"
