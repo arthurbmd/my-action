@@ -23,7 +23,7 @@ jobs:
       - name: ls
         run: |
           pwd
-          cd /home/runner/work/quarkus-social/quarkus-social/custom-actions
+          cd /__w/quarkus-social/quarkus-social/custom-actions/
           ls
       - name: Preparação e validação do projeto
         uses: ./custom-actions/actions/prepare
