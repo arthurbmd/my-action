@@ -21,7 +21,10 @@ jobs:
           ref: ${{ inputs.BRANCH }}
           path: custom-actions
       - name: ls
-        run: ls ./custom-actions
+        run: |
+          pwd
+          cd /home/runner/work/quarkus-social/quarkus-social/custom-actions
+          ls
       - name: Preparação e validação do projeto
         uses: ./custom-actions/actions/prepare
       - name: Criação de pacotes maven e/ou docker
