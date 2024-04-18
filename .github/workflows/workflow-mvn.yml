@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Actions from Another Repo
         uses: actions/checkout@v2
         with:
-          repository: arthurbmd/my-action
+          repository: arthurbmd/my-action@${{ env.refere }}
           path: custom-actions
     
       - name: Preparação e validação do projeto
