@@ -3,7 +3,7 @@ on: workflow_call
 jobs:
   build:
     env:
-      refere: ${{ github.workflow_sha }}
+      refere: ${{ github.job_workflow_sha }}
     runs-on: ubuntu-latest
     container:
       image: openjdk:17.0.2-jdk
