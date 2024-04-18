@@ -8,12 +8,15 @@ jobs:
     container:
       image: openjdk:17.0.2-jdk
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Checkout Actions from Another Repo
         uses: actions/checkout@v2
         with:
-          repository: 'arthurbmd/my-actions@${{ github.workflow_sha }}'
+          repository: arthurbmd/my-actions
+          path: custom-actions
+    
       - name: Preparação e validação do projeto
-        uses: ./.github/actions/prepare
+        uses: ./custom-actions/actions/prepare
       - name: Criação de pacotes maven e/ou docker
         run: echo "workflow chamado"
