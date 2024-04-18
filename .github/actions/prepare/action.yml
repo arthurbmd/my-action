@@ -6,10 +6,10 @@ runs:
     
     - name: Preparação e validação do projeto
       run: | 
-        sleep 50
+        sleep 10
         echo "Primeiro step da action prepare"
       shell: bash
-    - name: Preparar 2
-      run: echo "segundo step"
+    - name: build
+      run: mvn clean install
       shell: bash
 

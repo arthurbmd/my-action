@@ -6,6 +6,7 @@ on:
         required: true
         type: string
         description: "Name of branch of the actions repo"    
+        default: main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,10 +21,6 @@ jobs:
           repository: arthurbmd/my-action
           ref: ${{ inputs.BRANCH }}
           path: custom-actions
-      - name: ls
-        run: |
-          pwd
-          ls /__w/quarkus-social/quarkus-social/custom-actions/
       - name: Preparação e validação do projeto
         uses: ./custom-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
