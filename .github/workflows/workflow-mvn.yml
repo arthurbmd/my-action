@@ -1,13 +1,9 @@
 name: Build Project
-on: 
-  workflow_call:
-    inputs:
-      access-token:
-        required: true
-        description: "Token to access actions"
-        type: string
+on: workflow_call
 jobs:
   build:
+    env:
+      refere: ${{ github.workflow_sha }}
     runs-on: ubuntu-latest
     container:
       image: openjdk:17.0.2-jdk
@@ -16,10 +12,8 @@ jobs:
       - name: Checkout Actions from Another Repo
         uses: actions/checkout@v2
         with:
-          repository: 'arthurbmd/my-actions'
-          path: 'arthurbmd/my-actions'
-          token: ${{ inputs.access-token }}
+          repository: 'arthurbmd/my-actions@${{ github.workflow_sha }}'
       - name: Preparação e validação do projeto
-        uses: ./arthurbmd/my-actions/.github/actions/prepare
+        uses: ./.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
         run: echo "workflow chamado"
