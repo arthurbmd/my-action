@@ -14,15 +14,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name:
-        run: echo ${{ inputs.BRANCH }}
       - name: Checkout Actions from Another Repo
         uses: actions/checkout@v2
         with:
           repository: arthurbmd/my-action
           ref: ${{ inputs.BRANCH }}
           path: custom-actions
-    
+      - name: ls
+        run: echo ls ./custom-actions
       - name: Preparação e validação do projeto
         uses: ./custom-actions/actions/prepare
       - name: Criação de pacotes maven e/ou docker
