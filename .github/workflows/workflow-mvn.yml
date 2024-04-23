@@ -28,7 +28,7 @@ jobs:
         run: | 
           echo "workflow chamado"
           echo ${{ steps.preparation.outputs.configs }}
-          echo ${{fromJson(steps.preparation.outputs.configs.buildDocker) }}
+          echo '${{fromJson(steps.preparation.outputs.configs.buildDocker) }}'
       - name: Analise Xray
         if: fromJson(steps.preparation.outputs.configs.buildDocker)
         run: echo "Exemplo de análise de xRay"
