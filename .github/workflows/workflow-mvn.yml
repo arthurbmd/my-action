@@ -22,6 +22,10 @@ jobs:
           ref: ${{ inputs.BRANCH }}
           path: custom-actions
       - name: Preparação e validação do projeto
+        id: preparation
         uses: ./custom-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
         run: echo "workflow chamado"
+      - name: Analise Xray
+        if: steps.preparation.outcome.configs.buildDocker == true
+        run: echo "Exemplo de análise de xRay"
