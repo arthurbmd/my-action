@@ -3,8 +3,7 @@ description: "This is a action test"
 runs:
   using: 'composite'
   steps:
-    
-    - name: Preparação e validação do projeto
+    - name: 
       run: | 
         sleep 10
         echo "Primeiro step da action prepare"
