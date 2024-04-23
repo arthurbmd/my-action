@@ -9,7 +9,7 @@ function run() {
         const configFile = fs.readFile('config.json')
     } catch (err) {
         core.notice("falha ao ler arquivo de configuracao")
-        core.ExitCode(-1)
+        core.setFailed(err)
     }
     const parseData = JSON.parse(configFile)
 
