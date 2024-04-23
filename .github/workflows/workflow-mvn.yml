@@ -25,10 +25,10 @@ jobs:
         id: preparation
         uses: ./custom-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
-        run: | 
+        run: |
           echo "workflow chamado"
           echo ${{ steps.preparation.outputs.configs }}
-          echo '${{fromJson(steps.preparation.outputs.configs) }}'
+          echo "${{ fromJson(steps.preparation.outputs.configs) }}"
       - name: Analise Xray
         if: fromJson(steps.preparation.outputs.configs)
         run: echo "Exemplo de análise de xRay"
