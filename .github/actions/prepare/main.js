@@ -6,7 +6,7 @@ const fs = require('fs')
 
 function run() {
     try {
-        const configFile = fs.readFile('config.json')
+        const configFile = fs.readFile('./config.json')
     } catch (err) {
         core.notice("falha ao ler arquivo de configuracao")
         core.setFailed(err)
