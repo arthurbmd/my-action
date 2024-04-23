@@ -6,8 +6,26 @@ inputs:
     description: "Config file "
     default: ${{ github.workspace }}/config.json
 outputs:
-  configs:
-    description: "Matriz de configurações"
+  buildRunStaticValidation:
+    description: "Valor booleano para validação estática"
+  buildCompile:
+    description: "Valor booleano para compilação"
+  buildRunIntegrationTests:
+    description: "Valor booleano para testes integrados"
+  buildRunUnitTests:
+    description: "Valor booleano para testes unitários"
+  buildPackage:
+    description: "Valor booleano para construção de pacotes"
+  buildRunSonar:
+    description: "Valor booleano para execução do sonar"
+  buildPublish:
+    description: "Valor booleano para publicação"
+  buildDocker:
+    description: "Valor booleano para construção da imagem docker"
+  buildAutodeploy:
+    description: "Valor string para ambiente a ser realizado autodeploy"
+  buildDebug:
+    description: "Valor booleano para debug"
 runs:
   using: 'node16'
   main: main.js

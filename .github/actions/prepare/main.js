@@ -13,20 +13,16 @@ function run() {
         
         var parseData = JSON.parse(configFile)
 
-        var configs = {
-            "buildRunStaticValidation": parseData.workflow.habilitarValidacaoEstatica,
-            "buildCompile": parseData.workflow.habilitarConstrucao,
-            "buildRunUnitTests": parseData.workflow.habilitarTestesUnidade,
-            "buildRunIntegrationTests": parseData.workflow.habilitarTestesIntegracao,
-            "buildRunSonar": parseData.workflow.habilitarSonar,
-            "buildPackage": parseData.workflow.habilitarEmpacotamento,
-            "buildDocker": parseData.workflow.habilitarEmpacotamentoDocker,
-            "buildPublish": parseData.workflow.habilitarPublicacao,
-            "buildDebug": parseData.workflow.habilitarDebug,
-            "buildAutodeploy": parseData.workflow.autodeploy
-        }
-
-    core.setOutput('configs', configs)
+        setOutput("buildRunStaticValidation", parseData.workflow.habilitarValidacaoEstatica)
+        setOutput("buildCompile", parseData.workflow.habilitarConstrucao)
+        setOutput("buildRunUnitTests", parseData.workflow.habilitarTestesUnidade)
+        setOutput("buildRunIntegrationTests", parseData.workflow.habilitarTestesIntegracao)
+        setOutput("buildRunSonar", parseData.workflow.habilitarSonar)
+        setOutput("buildPackage", parseData.workflow.habilitarEmpacotamento)
+        setOutput("buildDocker", parseData.workflow.habilitarEmpacotamentoDocker)
+        setOutput("buildPublish", parseData.workflow.habilitarPublicacao)
+        setOutput("buildDebug", parseData.workflow.habilitarDebug)
+        setOutput("buildAutodeploy", parseData.workflow.autodeploy)
 
     } catch (err) {
         core.notice("falha ao ler arquivo de configuracao")
