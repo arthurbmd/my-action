@@ -4,10 +4,12 @@ const github = require('@actions/github')
 
 const fs = require('fs')
 
+const path = core.getInput('path')
+
 function run() {
     core.notice("Current directory:", __dirname)
     try {
-        const configFile = fs.readFile("/__w/quarkus-social/quarkus-social/config.json")
+        const configFile = fs.readFile("config.json")
     } catch (err) {
         core.notice("falha ao ler arquivo de configuracao")
         core.setFailed(err)
