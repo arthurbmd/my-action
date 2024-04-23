@@ -15,10 +15,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: print dir
-        run: |
-          pwd  
-          ls -a
       - name: Checkout Actions from Another Repo
         uses: actions/checkout@v4
         with:
@@ -29,7 +25,10 @@ jobs:
         id: preparation
         uses: ./custom-actions/.github/actions/prepare
       - name: Criação de pacotes maven e/ou docker
-        run: echo "workflow chamado"
+        run: | 
+          echo "workflow chamado"
+          echo ${{steps.preparation.outputs.configs}}
+          echo ${{steps.preparation.outputs.configs.buildDocker}}
       - name: Analise Xray
         if: steps.preparation.outputs.configs.buildDocker
         run: echo "Exemplo de análise de xRay"
