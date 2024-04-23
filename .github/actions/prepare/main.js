@@ -4,7 +4,7 @@ const github = require('@actions/github')
 
 const fs = require('fs')
 
-const path = core.getInput('path')
+const path = core.getInput('PATH')
 
 function run() {
     core.notice("Current directory:", __dirname)

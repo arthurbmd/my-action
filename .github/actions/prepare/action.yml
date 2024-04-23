@@ -1,10 +1,10 @@
 name: Build Project
 description: "This is a action test"
 inputs:
-  path: 
+  PATH: 
     required: false
     description: "Config file "
-    default: {{ githug.repository}}/config.json
+    default: ${{ github.workspace }}/config.json
 outputs:
   configs:
     description: "Matriz de configurações"
