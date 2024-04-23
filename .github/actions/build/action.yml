@@ -1,0 +1,9 @@
+name: Build Project
+description: "This is a action test"
+runs:
+  using: 'composite'
+  steps:
+    - name: build
+      run: mvn clean install
+      shell: bash
+

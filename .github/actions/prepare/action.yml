@@ -1,14 +1,9 @@
 name: Build Project
 description: "This is a action test"
+outputs:
+  configs:
+    description: "Matriz de configurações"
 runs:
-  using: 'composite'
-  steps:
-    - name: 
-      run: | 
-        sleep 10
-        echo "Primeiro step da action prepare"
-      shell: bash
-    - name: build
-      run: mvn clean install
-      shell: bash
-
+  using: 'node16'
+  main: main.js
+  
