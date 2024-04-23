@@ -9,9 +9,9 @@ const filePath = core.getInput('PATH')
 function run() {
     core.notice(filePath)
     try {
-        const configFile = fs.readFile(filePath)
+        var configFile = fs.readFileSync(filePath)
         
-        const parseData = JSON.parse(configFile)
+        var parseData = JSON.parse(configFile)
 
         var configs = {
             "buildRunStaticValidation": parseData.workflow.habilitarValidacaoEstatica,
