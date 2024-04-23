@@ -5,6 +5,7 @@ const github = require('@actions/github')
 const fs = require('fs')
 
 function run() {
+    core.notice("Current directory:", __dirname)
     try {
         const configFile = fs.readFile('./config.json')
     } catch (err) {
