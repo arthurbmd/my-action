@@ -31,5 +31,5 @@ jobs:
       - name: Criação de pacotes maven e/ou docker
         run: echo "workflow chamado"
       - name: Analise Xray
-        if: steps.preparation.outputs.configs.buildDocker == 'true'
+        if: steps.preparation.outputs.configs.buildDocker
         run: echo "Exemplo de análise de xRay"
