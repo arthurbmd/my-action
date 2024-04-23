@@ -15,6 +15,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: print dir
+        run: |
+          pwd  
+          ls -a
       - name: Checkout Actions from Another Repo
         uses: actions/checkout@v4
         with:
